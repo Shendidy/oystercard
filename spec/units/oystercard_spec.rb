@@ -23,4 +23,10 @@ RSpec.describe Oystercard do
     oycard = Oystercard.new
     expect {oycard.top_up(100)}.to raise_error("Exceeded max balance of #{oycard.Max_Balance}!")
   end
+
+  it 'is expected to deduct jurney rate when instructed to' do
+    oycard = Oystercard.new
+    oycard.top_up(20)
+    expect(oycard.deduct(5)).to eq(15)
+  end
 end

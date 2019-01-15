@@ -11,4 +11,8 @@ class Oystercard
     (@balance += amount) > @Max_Balance ? raise("Exceeded max balance of #{@Max_Balance}!") : @balance
   end
 
+  def deduct(amount)
+    @balance -= amount
+  end
+
 end
